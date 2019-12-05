@@ -32,7 +32,12 @@
             return nil;
         }
     } else {
-        return [self hw_getPanModalPresentationController];
+        if (self.presentingViewController) {
+            return [self hw_getPanModalPresentationController];
+        } else {
+            return nil;
+        }
+        //return [self hw_getPanModalPresentationController];
     }
 }
 
@@ -50,9 +55,9 @@
         ancestorsVC = self;
     }
     
-    /*if ([ancestorsVC.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
+    if ([ancestorsVC.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
         return (HWPanModalPresentationController *) ancestorsVC.presentationController;
-    }*/
+    }
     return nil;
 }
 
