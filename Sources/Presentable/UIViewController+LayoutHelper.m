@@ -50,9 +50,9 @@
         ancestorsVC = self;
     }
     
-    if ([ancestorsVC.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
+    /*if ([ancestorsVC.presentationController isMemberOfClass:HWPanModalPresentationController.class]) {
         return (HWPanModalPresentationController *) ancestorsVC.presentationController;
-    }
+    }*/
     return nil;
 }
 
